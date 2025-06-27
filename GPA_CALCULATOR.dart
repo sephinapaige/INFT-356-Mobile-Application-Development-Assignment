@@ -1,25 +1,24 @@
+import 'dart:io';
 void main() {
-  // Sample list of students with scores: [name, ca, exam, project]
-  List<List<dynamic>> students = [
-    ['Mary', 20.0, 50.0, 20.0],
-    ['Kwame', 25.0, 40.0, 30.0],
-    ['Owusu', 15.0, 35.0, 15.0],
-    ['Yaw', 30.0, 45.0, 25.0],
-  ];
 
-  for (var student in students) {
-    String name = student[0];
-    double ca = student[1];
-    double exam = student[2];
-    double project = student[3];
+    stdout.write("Enter student name: ");
+    String name = stdin.readLineSync();
+
+    stdout.write("Enter CA: ");
+    double ca = stdin.readLineSync();
+
+    stdout.write("Enter Exam score: ");
+    double exam = stdin.readLineSync();
+
+    stdout.write("Enter Project score: ");
+    double project = stdin.readLineSync();
 
     double total = ca + exam + project;
-    String grade = assignGrade(total);
+    String grade = assignScore(total);
 
-    print('Name: $name');
-    print('Total Score: $total');
-    print('Grade: $grade\n');
-  }
+    print("Name: $name");
+    print("Total Score: $total");
+    print("Grade: $grade");
 }
 
 String assignGrade(double totalScore) {
